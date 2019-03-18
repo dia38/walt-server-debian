@@ -7,8 +7,8 @@
 [Unit]
 Description=WalT server daemon
 # needs lldp
-Requires=lldpd.service
-After=lldpd.service
+Requires=lldpd.service isc-dhcp-server.service
+After=lldpd.service isc-dhcp-server.service
 # needs ptpd, but we must be initialized (ip on walt-net)
 # otherwise ptpd will fail to start (thus the 'Before=',
 # and the 'Type=notify' below).
